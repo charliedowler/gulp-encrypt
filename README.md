@@ -33,11 +33,8 @@ Type: `String`
 Default: `null`
 
 #### options.decrypt
-Type: `String`  
+Type: `Boolean`  
 Default: `false`
-
-The message you wish to attach to file.
-
 
 ## License
 
