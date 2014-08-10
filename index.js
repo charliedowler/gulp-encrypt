@@ -1,6 +1,6 @@
 var through = require('through2'),
 	gutil = require('gulp-util'),
-	encrypt = require('cf-encrypt');
+	crypto = require('crypto');
 
 module.exports = function (param) {
 	'use strict';
@@ -37,9 +37,21 @@ module.exports = function (param) {
 		if (file.isBuffer()) {
 
 			// manipulate buffer in some way
-			// http://nodejs.org/api/buffer.html			
-			var encrypted = encrypt[(param.decrypt ? 'decrypt' : 'encrypt')](param.key, file.contents.toString(), 'hex');
-			file.contents = new Buffer(encrypted);
+			// http://nodejs.org/api/buffer.html
+      var contents = file.contents.toString();
+      var key = param.key;
+
+      if (!param.decrypt) {
+        var cipher = crypto.createCipher('aes-256-cbc', key);
+        cipher.update(contents, 'utf8', 'base64');
+        contents = cipher.final('base64')
+      }
+      else {
+        var decipher = crypto.createDecipher('aes-256-cbc', key);
+        decipher.update(contents, 'base64', 'utf8');
+        contents = decipher.final('utf8');
+      }
+			file.contents = new Buffer(contents);
 
 			this.push(file);
 
