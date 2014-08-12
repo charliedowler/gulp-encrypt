@@ -18,8 +18,7 @@
   },
   "dependencies": {
     "through2": "*",
-    "gulp-util": "~2.2.0",
-    "cf-encrypt": "~0.0.4"
+    "gulp-util": "~2.2.0"
   },
   "devDependencies": {
     "mocha": "*",
