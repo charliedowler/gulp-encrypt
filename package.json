@@ -11,7 +11,10 @@
     "name": "charliedowler",    
     "url": "https://github.com/charliedowler"
   },
-  "repository": "charliedowler/gulp-encrypt",
+  "repository": {
+    "url": "git://github.com/charliedowler/gulp-encrypt",
+    "job": "https://api.travis-ci.org/repositories/charliedowler/gulp-encrypt"
+  },
   "scripts": {
     "test": "istanbul test _mocha --report html -- test/*.js --reporter spec",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
