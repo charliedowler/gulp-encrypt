@@ -9,6 +9,9 @@ module.exports = function (param) {
 	if (!param) {
 		throw new gutil.PluginError('gulp-encrypt', 'No param supplied');
 	}
+	else if (!param.key) {
+		throw new gutil.PluginError('gulp-encrypt', 'No key param supplied');
+	}
 
 	// see 'Writing a plugin'
 	// https://github.com/gulpjs/gulp/blob/master/docs/writing-a-plugin/README.md
@@ -54,8 +57,7 @@ module.exports = function (param) {
 			file.contents = new Buffer(contents);
 
 			this.push(file);
-
-		}		
+		}
 		return callback();
 	}
 
