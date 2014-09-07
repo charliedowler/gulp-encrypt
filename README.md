@@ -1,5 +1,5 @@
 # gulp-encrypt
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]  [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
 
 > gulp-encrypt plugin for [gulp](https://github.com/wearefractal/gulp)
 
@@ -45,9 +45,6 @@ Default: `false`
 
 [travis-url]: http://travis-ci.org/charliedowler/gulp-encrypt
 [travis-image]: https://secure.travis-ci.org/charliedowler/gulp-encrypt.png?branch=master
-
-[coveralls-url]: https://coveralls.io/r/charliedowler/gulp-encrypt
-[coveralls-image]: https://coveralls.io/repos/charliedowler/gulp-encrypt/badge.png
 
 [depstat-url]: https://david-dm.org/charliedowler/gulp-encrypt
 [depstat-image]: https://david-dm.org/charliedowler/gulp-encrypt.png
